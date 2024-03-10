@@ -27,46 +27,23 @@
 
     if(confirm("Join Our Telegram Channel @livecrichdd For More Links")) { window.location.href = "https://t.me/+vi_UBdhOsN5jYzY1" }
     // Function to generate Telegram channel link dynamically
-     const videoDiv = document.createElement("div");
-    videoDiv.id = "video";
+    function generateTelegramLink() {
+      var telegramLink = document.createElement("a");
+      telegramLink.href = "https://t.me/+vi_UBdhOsN5jYzY1";
+      telegramLink.target = "_blank";
 
-    const buttonDiv = document.createElement("div");
-    buttonDiv.style.backgroundColor = "#0074d9";
-    buttonDiv.style.textAlign = "center";
-    buttonDiv.style.padding = "10px";
-
-    const joinTelegramButton = document.createElement("button");
-    joinTelegramButton.id = "joinTelegramButton";
-    joinTelegramButton.style.backgroundColor = "#fff";
-    joinTelegramButton.style.color = "#0074d9";
-    joinTelegramButton.style.border = "2px solid #0074d9";
-    joinTelegramButton.style.padding = "5px 10px";
-    joinTelegramButton.innerText = "Join Telegram";
-
-    buttonDiv.appendChild(joinTelegramButton);
-
-    function executeTelegramCommand() {
-      if (confirm("Join Our Telegram Channel @livecrichd")) {
-        window.location.href = telegramLink;
-      }
+      // Append the dynamically generated link to the specified container
+      document.getElementById("telegramContainer").appendChild(telegramLink);
     }
 
-    function executeTelegramButtonCommand() {
-      joinTelegramButton.addEventListener("click", function () {
-        window.open(telegramLink, "_blank");
-      });
-    }
-
-  
-    document.body.style.backgroundColor = "#000";
-    document.body.style.color = "#fff";
-
-    
-    executeJWPlayerSetup();
-    executeTelegramCommand();
-    executeTelegramButtonCommand();
+    // Call the function to generate Telegram link
+    generateTelegramLink();
   </script>
 
-  <div id="telegramContainer" style="background-color: #0074d9; text-align: center; padding: 10px;"></div>
+  <div id="telegramContainer" style="background-color: #0074d9; text-align: center; padding: 10px;">
+    <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">
+      Join Telegram
+    </button>
+  </div>
 </body>
 </html>
