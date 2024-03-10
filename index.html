@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram-Live-Cric-Hd </title>
+  
+  <!-- JW Player libraries -->
+  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/provider.hlsjs.js"></script>
+  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwplayer.core.controls.js"></script>
+  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwpsrv.js"></script>
+
+  <!-- Other external libraries -->
+  <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+
+  <!-- JW Player initialization script -->
+  <script>
+    // Function to get video URL parameter from the query string
+    function getVideoUrlParameter() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('videoUrl');
+    }
+
+    // Initialize JW Player with the extracted video URL
+    jwplayer("jwplayer").setup({
+      file: getVideoUrlParameter(),
+      // Other JW Player configuration options go here
+    });
+  </script>
+</head>
+<body>
+  <div id="jwplayer"></div>
+</body>
+</html>
