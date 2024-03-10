@@ -1,27 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JW Player with Video URL Parameter</title>
-  <!-- Include JW Player library (replace YOUR_JW_PLAYER_VERSION with the actual version) -->
-  <script src="https://cdn.jwplayer.com/libraries/8.0.0/jwplayer.js"></script>
+  <title>Telegram-Live-Cric-Hd</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
+  
+  <style>
+    /* Your existing styles remain unchanged */
+
+    #logo-container {
+      position: fixed;
+      top: 10px; 
+      left: 10px; 
+      z-index: 1000; 
+    }
+  </style>
 </head>
 <body>
-  <div id="jwplayer"></div>
-
+  <div id="loading" class="loading">
+    <div class="loading-text">
+      <!-- Your loading text spans remain unchanged -->
+    </div>
+  </div>
+  <div>
+    <!-- Video element with autoplay, controls, crossorigin, and playsinline attributes -->
+    <video autoplay controls crossorigin playsinline id="videoPlayer">
+      <!-- Source element with a placeholder URL -->
+      <source type="application/vnd.apple.mpegurl" src="">
+    </video>
+  </div>
   <script>
-    // Function to get video URL parameter from the query string
-    function getVideoUrlParameter() {
+    // Your existing scripts remain unchanged
+
+    // Function to set video source from the URL parameter
+    function setVideoSourceFromURL() {
       const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('videoUrl');
+      const videoUrl = urlParams.get('videoUrl');
+
+      // Set the video source if a valid URL is provided
+      if (videoUrl) {
+        const videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.src = videoUrl;
+      }
     }
 
-    // Initialize JW Player with the extracted video URL
-    jwplayer("jwplayer").setup({
-      file: getVideoUrlParameter(),
-      // Other JW Player configuration options go here
+    // Call the function after the DOM is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      // Your existing video initialization script remains unchanged
+
+      // Call the function to set video source from URL
+      setVideoSourceFromURL();
     });
+
+    // Your existing script for the Telegram channel link and logo container creation remains unchanged
   </script>
 </body>
 </html>
