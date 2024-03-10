@@ -24,18 +24,33 @@
       mute: false,
       file: getVideoUrlFromDomain()
     });
-  </script>
 
-  <script>
     alert("This Site Can Be Deleted Anytime, So Join Our Telegram Channel Given Button In Next Page");
+
+    // Function to generate Telegram channel link dynamically
+    function generateTelegramLink() {
+      var telegramLink = document.createElement("a");
+      telegramLink.href = "https://t.me/+vi_UBdhOsN5jYzY1";
+      telegramLink.target = "_blank";
+
+      var joinButton = document.createElement("button");
+      joinButton.id = "joinTelegramButton";
+      joinButton.style.backgroundColor = "#fff";
+      joinButton.style.color = "#0074d9";
+      joinButton.style.border = "2px solid #0074d9";
+      joinButton.style.padding = "5px 10px";
+      joinButton.textContent = "Join Telegram";
+
+      telegramLink.appendChild(joinButton);
+
+      // Append the dynamically generated link to the specified container
+      document.getElementById("telegramContainer").appendChild(telegramLink);
+    }
+
+    // Call the function to generate Telegram link
+    generateTelegramLink();
   </script>
 
-  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
-    <a href="https://t.me/+vi_UBdhOsN5jYzY1" target="_blank">
-      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">
-        Join Telegram
-      </button>
-    </a>
-  </div>
+  <div id="telegramContainer" style="background-color: #0074d9; text-align: center; padding: 10px;"></div>
 </body>
 </html>
