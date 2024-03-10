@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram-Live-Cric-Hd </title>
-  
-  <!-- JW Player libraries -->
-  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/provider.hlsjs.js"></script>
-  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwplayer.core.controls.js"></script>
-  <script src="https://ssl.p.jwpcdn.com/player/v/8.32.1/jwpsrv.js"></script>
+  <title>JW Player with Video URL Parameter</title>
+  <!-- Include JW Player library (replace YOUR_JW_PLAYER_VERSION with the actual version) -->
+  <script src="https://cdn.jwplayer.com/libraries/8.0.0/jwplayer.js"></script>
+</head>
+<body>
+  <div id="jwplayer"></div>
 
-  <!-- Other external libraries -->
-  <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
-  <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
-
-  <!-- JW Player initialization script -->
   <script>
     // Function to get video URL parameter from the query string
     function getVideoUrlParameter() {
@@ -28,8 +23,5 @@
       // Other JW Player configuration options go here
     });
   </script>
-</head>
-<body>
-  <div id="jwplayer"></div>
 </body>
 </html>
