@@ -1,62 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Telegram-Live-Cric-Hd</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
-  
-  <style>
-    /* Your existing styles remain unchanged */
-
-    #logo-container {
-      position: fixed;
-      top: 10px; 
-      left: 10px; 
-      z-index: 1000; 
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FanCode Live</title>
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
 </head>
 <body>
-  <div id="loading" class="loading">
-    <div class="loading-text">
-      <!-- Your loading text spans remain unchanged -->
-    </div>
-  </div>
-  <div>
-    <!-- Video element with autoplay, controls, crossorigin, and playsinline attributes -->
-    <video autoplay controls crossorigin playsinline id="videoPlayer">
-      <!-- Source element with a placeholder URL -->
-      <source type="application/vnd.apple.mpegurl" src="">
-    </video>
-  </div>
-  <script>
-    // Your existing scripts remain unchanged
+  <div id="video"></div>
 
-    // Function to set video source from the URL parameter
-    function setVideoSourceFromURL() {
+  <script type="text/javascript">
+    // Function to get video URL from the domain
+    function getVideoUrlFromDomain() {
       const urlParams = new URLSearchParams(window.location.search);
-      const videoUrl = urlParams.get('videoUrl');
-
-      // Set the video source if a valid URL is provided
-      if (videoUrl) {
-        const videoPlayer = document.getElementById('videoPlayer');
-        videoPlayer.src = videoUrl;
-      }
+      return urlParams.get('videoUrl');
     }
 
-    // Call the function after the DOM is loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      // Your existing video initialization script remains unchanged
-
-      // Call the function to set video source from URL
-      setVideoSourceFromURL();
+    jwplayer("video").setup({
+      width: "100%",
+      height: "100%",
+      autostart: true,
+      mute: false,
+      file: getVideoUrlFromDomain()
     });
-
-    // Your existing script for the Telegram channel link and logo container creation remains unchanged
   </script>
+
+  <script>
+    alert("This Site Can Be Deleted Anytime, So Join Our Telegram Channel Given Button In Next Page");
+  </script>
+
+  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+    <a href="https://t.me/+vi_UBdhOsN5jYzY1" target="_blank">
+      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">
+        Join Telegram
+      </button>
+    </a>
+  </div>
 </body>
 </html>
